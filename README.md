@@ -10,7 +10,7 @@ The Amazon metadata dataset comprises JSON objects with fields such as asin, tit
 
 ## Pre-Processing
 ### 1. Loading and Sampling the Dataset
-The initial dataset size of 12 GB was sampled to ensure a manageable size for processing, with a minimum sample size of 15 GB maintained to preserve data integrity.
+The initial dataset size of 100 GB approximately was sampled to ensure a manageable size for processing, with a minimum sample size of 15 GB maintained to preserve data integrity.
 
 ### 2. Data Cleaning and Formatting
 The sampled dataset was pre-processed to clean and format the data, making it suitable for analysis. This involved handling missing values, standardizing text formats, and structuring the data for efficient processing.

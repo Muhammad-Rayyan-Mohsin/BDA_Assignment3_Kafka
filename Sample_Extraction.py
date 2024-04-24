@@ -1,37 +1,22 @@
 import json
+import os
+from tqdm import tqdm
 
-# Define the size limit in bytes (15 GB)
-size_limit = 15 * 1024 * 1024 * 1024
+def sample_json(input_file, output_file, target_size_gb, filter_key='also_buy'):
+    target_size_bytes = target_size_gb * 1024 ** 3
+    current_size_bytes = 0
 
-# Open the large JSON file for reading
-with open('All_Amazon_Meta.json', 'r') as infile:
-    # Open a new file for writing filtered content
-    with open('filtered_content.json', 'w') as outfile:
-        # Initialize a variable to track the total size of extracted data
-        extracted_size = 0
-        
-        # Iterate over each line in the input file
-        for line in infile:
-            try:
-                # Parse the JSON object from the line
-                item = json.loads(line)
-                
-                # Convert the JSON object to a string
-                json_str = json.dumps(item)
-                
-                # Calculate the size of the JSON string
-                json_size = len(json_str.encode('utf-8'))
-                
-                # Check if adding this JSON object exceeds the size limit
-                if extracted_size + json_size <= size_limit:
-                    # Write the JSON object to the output file
-                    outfile.write(json_str + '\n')
-                    
-                    # Update the total extracted size
-                    extracted_size += json_size
-                else:
-                    # Stop processing if the size limit is reached
-                    break
-            except json.JSONDecodeError:
-                # Skip lines that cannot be parsed as JSON
-                continue
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+        for line in tqdm(infile):
+            record = json.loads(line)
+            if record.get(filter_key):
+                outfile.write(json.dumps(record) + '\n')
+                current_size_bytes += len(line.encode('utf-8'))
+
+            if current_size_bytes >= target_size_bytes:
+                break
+
+input_file = 'All_Amazon_Meta.json'
+output_file = 'Sample_Amazon_Meta.json'
+
+sample_json(input_file, output_file, target_size_gb=15, filter_key='also_buy')

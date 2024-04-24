@@ -1,4 +1,8 @@
 # BDA_Assignment3_Kafka
+Made by:
+- Sufyan Nasr i221898
+- Haider Farooq i221943
+- Muhammad Rayyan Mohsin i222052
 
 # Comprehensive Report: Streaming Data Insights with Frequent Itemset Analysis on Amazon Metadata
 

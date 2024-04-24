@@ -33,7 +33,7 @@ One consumer application implemented the Apriori algorithm, adapting it for the 
 Another consumer application implemented the PCY algorithm, leveraging techniques such as sliding window approach and approximation to handle streaming data efficiently. Real-time insights and associations were displayed to facilitate ongoing analysis.
 
 ### 3. Innovative Analysis Consumer
-The third consumer application was dedicated to innovative and creative analysis. Advanced techniques such as incremental processing and online algorithms were explored to extract unique insights from the streaming data. This consumer aimed to go beyond straightforward analyses, providing valuable and novel findings.
+The third consumer application was dedicated to innovative and creative analysis. Advanced techniques  In the 3rd consumer, we implemented our own code came up with creative methods and uses for the consumer.
 
 ## Database Integration
 ### Database Selection

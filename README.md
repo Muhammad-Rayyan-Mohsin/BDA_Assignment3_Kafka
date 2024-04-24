@@ -18,9 +18,6 @@ The sampled dataset was pre-processed to clean and format the data, making it su
 ### 3. Generating Preprocessed Data
 A new JSON file containing the preprocessed data was generated, ensuring that it retained all necessary information while being optimized for streaming and analysis.
 
-### 4. Bonus: Real-Time Batch Processing
-Batch processing techniques were employed to execute pre-processing in real-time, facilitating continuous data preparation for subsequent analysis steps.
-
 ## Streaming Pipeline Setup
 ### 1. Producer Application
 A producer application was developed to stream preprocessed data in real-time, ensuring a continuous flow of information for analysis.
